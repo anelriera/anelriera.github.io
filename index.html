@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anel Riera Moraian | Data & Business Analytics Portfolio</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply Inter font globally and ensure smooth scrolling */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=100..900&display=swap');
+        
+        /* Global Background: Light Blue/Slate for the main content */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* Tailwind's slate-100 */
+            color: #1f2937; /* Dark text for contrast */
+            scroll-behavior: smooth;
+        }
+        
+        /* Style for the accent element (teal color) */
+        .accent-text {
+            color: #2dd4bf; /* Tailwind's teal-400 */
+        }
+        
+        /* Utility class for the image placeholder background pattern */
+        .profile-bg-pattern {
+            /* Subtle repeating pattern to make it look "part of the background" */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23e5e7eb' d='M0 0h10v10H0zm10 10h10v10H10zm10 10h10v10H20z' opacity='0.5'/%3E%3C/svg%3E");
+            background-color: #f3f4f6;
+            background-size: 10px 10px;
+        }
+        
+        /* Custom card style for professional look in a light theme (applying rounded-md in HTML) */
+        .portfolio-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(45, 212, 191, 0.15), 0 4px 6px -2px rgba(45, 212, 191, 0.08);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Simple Navigation Bar (White/Light Theme) -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold accent-text hover:text-teal-600 transition duration-300">Anel Riera</a>
+            <div class="hidden md:flex space-x-8 text-lg font-medium text-gray-700">
+                <a href="#projects" class="hover:accent-text transition duration-200">Projects</a>
+                <a href="#skills" class="hover:accent-text transition duration-200">Skills</a>
+                <a href="#contact" class="hover:accent-text transition duration-200">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- 1. Hero / About Section (Full Width White Background) -->
+        <section id="home" class="bg-white">
+            <div class="container mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-3/5 space-y-6">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight text-gray-900">
+                        Hi, I'm <span class="accent-text">Anel Riera</span>.
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-600">
+                        Business & Data Analytics Student
+                    </h2>
+                    <p class="text-lg text-gray-700 max-w-xl">
+                        I translate complex data into actionable business strategies. My portfolio showcases projects in market analysis, predictive modeling, and data visualization using Python, SQL, and Tableau, driving measurable impact.
+                    </p>
+                    <div class="pt-4 space-x-4">
+                        <!-- Buttons: Changed rounded-full to rounded-md -->
+                        <a href="#projects" class="inline-block px-8 py-3 bg-teal-600 text-white font-bold rounded-md shadow-lg hover:bg-teal-700 transition duration-300 transform hover:scale-105">View Projects</a>
+                        <a href="#contact" class="inline-block px-8 py-3 border-2 border-teal-600 text-teal-600 font-bold rounded-md hover:bg-teal-50 transition duration-300">Get In Touch</a>
+                    </div>
+                </div>
+                <!-- Placeholder for Professional Photo/Avatar (Rectangular and integrated) -->
+                <div class="mt-10 md:mt-0 md:w-1/4 flex justify-center">
+                    <!-- Image Placeholder: Changed to rectangular w-72 h-80 with rounded-md for slight modern touch -->
+                    <div class="w-72 h-80 flex items-center justify-center text-gray-700 text-center text-sm border-4 border-teal-600 shadow-xl profile-bg-pattern rounded-md">
+                        [Your Professional Photo Here]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <hr class="my-12 border-gray-300 container mx-auto px-4">
+
+        <!-- 2. Projects Section (Light Blue/Slate Background) -->
+        <section id="projects" class="py-16 container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-10 text-center text-gray-800">Featured <span class="accent-text">Projects</span></h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1: Sales Forecasting -->
+                <div class="portfolio-card p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-3 accent-text">1. Predictive Sales Model</h3>
+                    <p class="text-gray-600 mb-4">
+                        Forecasting quarterly sales performance for a retail chain using time-series analysis to optimize inventory and staffing.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-sm mb-4">
+                        <!-- Tags: Changed rounded-full to rounded-md -->
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">Python</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">Scikit-learn</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">ARIMA</span>
+                    </div>
+                    <a href="#" class="text-teal-600 hover:text-teal-800 font-medium transition duration-200 block mt-4">[Link to GitHub Code] &rarr;</a>
+                    <a href="#" class="text-teal-600 hover:text-teal-800 font-medium transition duration-200 block mt-1">[Link to Report/Demo] &rarr;</a>
+                </div>
+
+                <!-- Project Card 2: Customer Segmentation -->
+                <div class="portfolio-card p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-3 accent-text">2. RFM Customer Segmentation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Segmenting an e-commerce customer base using Recency, Frequency, and Monetary (RFM) analysis to target high-value customers.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-sm mb-4">
+                        <!-- Tags: Changed rounded-full to rounded-md -->
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">SQL</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">K-Means</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">Power BI</span>
+                    </div>
+                    <a href="#" class="text-teal-600 hover:text-teal-800 font-medium transition duration-200 block mt-4">[Link to GitHub Code] &rarr;</a>
+                    <a href="#" class="text-teal-600 hover:text-teal-800 font-medium transition duration-200 block mt-1">[Link to Report/Demo] &rarr;</a>
+                </div>
+
+                <!-- Project Card 3: Dashboard Creation -->
+                <div class="portfolio-card p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-3 accent-text">3. Operational KPI Dashboard</h3>
+                    <p class="text-gray-600 mb-4">
+                        Designed and implemented a live Tableau dashboard to track marketing spend effectiveness and key operational metrics.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-sm mb-4">
+                        <!-- Tags: Changed rounded-full to rounded-md -->
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">Tableau</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">Excel</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md font-medium">Data Cleaning</span>
+                    </div>
+                    <a href="#" class="text-teal-600 hover:text-teal-800 font-medium transition duration-200 block mt-4">[Link to GitHub Code] &rarr;</a>
+                    <a href="#" class="text-teal-600 hover:text-teal-800 font-medium transition duration-200 block mt-1">[Link to Report/Demo] &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <hr class="my-12 border-gray-300 container mx-auto px-4">
+
+        <!-- 3. Skills Section (Light Blue/Slate Background) -->
+        <section id="skills" class="py-16 container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-10 text-center text-gray-800">My <span class="accent-text">Toolbox</span></h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                <!-- Skill 1: Programming -->
+                <div class="p-4 bg-white rounded-md text-center shadow-md border border-slate-200">
+                    <div class="text-2xl font-bold accent-text mb-1">Code</div>
+                    <p class="text-gray-700 text-sm">Python, R, SQL, Git</p>
+                </div>
+                <!-- Skill 2: Visualization -->
+                <div class="p-4 bg-white rounded-md text-center shadow-md border border-slate-200">
+                    <div class="text-2xl font-bold accent-text mb-1">Visuals</div>
+                    <p class="text-gray-700 text-sm">Tableau, Power BI, Matplotlib, Seaborn</p>
+                </div>
+                <!-- Skill 3: Analysis/Stats -->
+                <div class="p-4 bg-white rounded-md text-center shadow-md border border-slate-200">
+                    <div class="text-2xl font-bold accent-text mb-1">Modeling</div>
+                    <p class="text-gray-700 text-sm">Regressions, Time Series, Segmentation, A/B Testing</p>
+                </div>
+                <!-- Skill 4: Business/Tools -->
+                <div class="p-4 bg-white rounded-md text-center shadow-md border border-slate-200">
+                    <div class="text-2xl font-bold accent-text mb-1">Business</div>
+                    <p class="text-gray-700 text-sm">Excel, Financial Analysis, Requirements Gathering</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <hr class="my-12 border-gray-300 container mx-auto px-4">
+
+        <!-- 4. Contact Section (Light Blue/Slate Background) -->
+        <section id="contact" class="py-16 text-center container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Let's <span class="accent-text">Connect</span></h2>
+            <p class="text-lg text-gray-700 mb-8">
+                I'm currently seeking new challenges and collaboration opportunities.
+            </p>
+            <div class="space-y-4">
+                <p class="text-xl">
+                    Email: <a href="mailto:your.email@example.com" class="accent-text hover:text-teal-600">your.email@example.com</a>
+                </p>
+                <p class="text-xl">
+                    LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" class="accent-text hover:text-teal-600">/in/yourprofile</a>
+                </p>
+                <p class="text-xl">
+                    GitHub: <a href="https://github.com/anelriera" target="_blank" class="accent-text hover:text-teal-600">/anelriera</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Light Theme) -->
+    <footer class="bg-gray-200 py-6 mt-16 border-t border-gray-300">
+        <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
+            &copy; 2024 Anel Riera. Built from scratch with HTML & Tailwind CSS.
+        </div>
+    </footer>
+
+    <!-- Basic JavaScript (for future interaction, currently empty) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Future JavaScript logic for things like mobile menus or animations goes here.
+            console.log("Portfolio loaded successfully.");
+        });
+    </script>
+
+</body>
+</html>
