@@ -6,42 +6,46 @@
     <title>Anel Riera Moraian | Data & Business Analytics Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Import new fonts: Oswald for body, Arizonia for titles (swirly alternative) */
-        @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Oswald:wght@200..700&display=swap');
+        /* Import new fonts: Oswald for body, Playfair Display for titles (High-contrast serif) */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Oswald:wght@200..700&display=swap');
         
-        /* --- COLOR VARIABLES (BLUE TO RED) --- */
+        /* --- COLOR VARIABLES (RED SCHEME) --- */
         :root {
-            /* Cool, Dark Red/Burgundy for all accents, text, and buttons: #8A0707 (was #385d88) */
-            --color-accent-dark: #8A0707; 
-            /* Very Light, Cool Red/Pink for the main section background: #f5e0e0 (was #e0eff5) */
+            /* Cool, Dark Red/Burgundy for all accents, text, and buttons: #883838 */
+            --color-accent-dark: #883838; 
+            /* Very Light, Cool Red/Pink for the main section background: #f5e0e0 */
             --color-background-light: #f5e0e0; 
-            /* Slightly darker shade for hover effects: #6b2d2d (was #2d4a6b) */
+            /* Slightly darker shade for hover effects: #6b2d2d */
             --color-accent-hover: #6b2d2d; 
         }
 
         /* Global Background: Light Red/Pink for the main content & Oswald font */
         body {
-            font-family: 'Oswald', sans-serif; /* Changed from Inter to Oswald */
+            font-family: 'Oswald', sans-serif; /* Oswald for all body text */
             background-color: var(--color-background-light); 
             color: #1f2937; /* Dark text for contrast */
             scroll-behavior: smooth;
         }
 
-        /* Apply the swirly font to all titles */
-        h1, h2, h3 {
-            font-family: 'Lobster', cursive; 
-            font-weight: 400; /* Lobster is a single, decorative weight */
+        /* Apply the high-contrast serif font (Playfair Display) to main titles (h1, h2, h3) */
+        h1, h3, h2.main-title { 
+            font-family: 'Playfair Display', serif; 
         }
         
+        /* Override: Keep h2 for 'Junior Business Analyst' using the body font (Oswald) */
+        h2.body-font-style {
+            font-family: 'Oswald', sans-serif !important;
+        }
+
         /* Style for the accent element (cool, dark red color) */
         .accent-text {
             color: var(--color-accent-dark); 
         }
         
-        /* Custom card style for professional look in a light theme (no rounding applied) */
+        /* Custom card style for professional look in a light theme */
         .portfolio-card {
             background-color: #ffffff;
-            border: 1px solid #c8d3db; /* Border slightly darker than background */
+            border: 1px solid #c8d3db;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -81,7 +85,7 @@
                     <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
                         Hi, I'm <span class="accent-text">Anel</span>.
                     </h1>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 body-font-style">
                         Junior Business Analyst
                     </h2>
                     <p class="text-lg text-gray-700 max-w-xl">
