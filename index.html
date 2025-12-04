@@ -1,286 +1,505 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anel Riera Moraian | Data & Business Analytics Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Import new fonts: Oswald for body, Playfair Display for titles (High-contrast serif) */
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Oswald:wght@200..700&display=swap');
-        
-        /* --- COLOR VARIABLES (RED SCHEME) --- */
-        :root {
-            /* Cool, Dark Red/Burgundy for all accents, text, and buttons: #883838 */
-            --color-accent-dark: #883838; 
-            /* Very Light, Cool Red/Pink for the main section background: #f5e0e0 */
-            --color-background-light: #f5e0e0; 
-            /* Slightly darker shade for hover effects: #6b2d2d */
-            --color-accent-hover: #6b2d2d; 
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Anel Riera Moraian | Data & Business Analytics Portfolio</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            /* Import new fonts: Oswald for body, Playfair Display for titles (High-contrast serif) */
+            @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Oswald:wght@200..700&display=swap");
 
-        /* Global Background: Light Red/Pink for the main content & Oswald font */
-        body {
-            font-family: 'Oswald', sans-serif; /* Oswald for all body text */
-            background-color: var(--color-background-light); 
-            color: #1f2937; /* Dark text for contrast */
-            scroll-behavior: smooth;
-        }
-
-        /* Apply the high-contrast serif font (Playfair Display) to main titles (h1, h3) and the link */
-        h1, h3, a.main-title { 
-            font-family: 'Playfair Display', serif; 
-        }
-        
-        /* Override: Keep h2 for 'Junior Business Analyst' using the body font (Oswald) */
-        h2.body-font-style {
-            font-family: 'Oswald', sans-serif !important;
-        }
-
-        /* Style for the accent element (cool, dark red color) */
-        .accent-text {
-            color: var(--color-accent-dark); 
-        }
-        
-        /* Custom border for section dividers (using the accent color) */
-        .accent-border-top {
-            border-top: 3px solid var(--color-accent-dark);
-        }
-
-        /* Custom card style for professional look in a light theme */
-        .portfolio-card {
-            background-color: #ffffff;
-            border: 1px solid #c8d3db;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        /* Update hover to use a subtle accent red shadow */
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            /* Use the cool dark red accent for the shadow (RGB 136, 56, 56) */
-            box-shadow: 0 10px 15px -3px rgba(136, 56, 56, 0.15), 0 4px 6px -2px rgba(136, 56, 56, 0.08); 
-        }
-
-        /* Hero section remains pure white */
-        .hero-bg {
-            background-color: white; 
-        }
-
-    </style>
-</head>
-<body>
-
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold accent-text hover:text-gray-700 transition duration-300">Anel Riera Moraian</a>
-            <div class="hidden md:flex space-x-8 text-lg font-medium text-gray-700">
-                <a href="#projects" class="hover:accent-text transition duration-200">Projects</a>
-                <a href="#skills" class="hover:accent-text transition duration-200">Skills</a>
-                <a href="#contact" class="hover:accent-text transition duration-200">Contact</a>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-
-        <section id="home" class="hero-bg relative overflow-hidden pt-20 md:pt-24 pb-32 md:pb-40">
-            <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between">
-                
-                <div class="md:w-3/5 space-y-6 text-gray-900 z-10">
-                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
-                        Hi, I'm <span class="accent-text">Anel</span>.
-                    </h1>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 body-font-style">
-                        Junior Business Analyst
-                    </h2>
-                    <p class="text-lg text-gray-700 max-w-xl">
-                        I love making sense of things, whether it’s data, people, or the way a project fits together. I’m driven by curiosity, and the feeling of bringing clarity to complex situations. I navigate life in multiple languages, thrive in international environments, and naturally adapt to whatever challenge is in front of me.
-                    </p>
-                    
-                    <p class="pt-4 text-xl">
-                        <a href="#biography" class="accent-text main-title hover:text-[--color-accent-hover] transition duration-200 block">
-                            Learn more about me &rarr;
-                        </a>
-                    </p>
-                    </div>
-                
-                <div class="md:w-2/5 md:ml-auto flex justify-end mt-10 md:mt-0 relative overflow-hidden h-[24rem] z-0">
-                    <div class="w-full max-w-sm md:w-full md:max-w-none h-auto md:h-full relative">
-                        <img 
-                            id="profile-pic"
-                            src="images/unnamed.png" 
-                            alt="Anel Riera Professional Profile Picture" 
-                            class="w-full h-full object-cover object-bottom" 
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x500/ffffff/2dd4bf?text=Image+Missing'; console.error('Image failed to load from images/unnamed.png');"
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="biography" class="py-16 container mx-auto px-4 accent-border-top">
-            <div class="max-w-4xl mx-auto space-y-6 text-gray-700 text-lg leading-relaxed">
-                <p>
-                    I’m Anel, and I studied Business Analytics at the Autonomous University of Madrid because I enjoy understanding how things work.
-                </p>
-                <p>
-                    I’ve worked in the real estate sector, where I supported operations and analyzed property profitability in Madrid. It taught me how numbers translate into real-world decisions, and how much efficiency matters when people rely on your work. 
-                </p>
-                <p>
-                    I've also helped organize events for international students at university and lived in different countries growing up, which explains why I’m so comfortable communicating across cultures, and why I can adapt quickly in fast-changing environments.
-                </p>
-                <p>
-                    Outside of my academic and professional life, I spend a lot of time social dancing and competing. It’s made me confident under pressure and great at connecting with new people. I also enjoy creating digital content, which taught me a lot about audience engagement and communicating ideas simply.
-                </p>
-            </div>
-        </section>
-        <hr class="my-12 border-gray-300 container mx-auto px-4">
-
-        <section id="projects" class="py-16 container mx-auto px-4 mt-[-5rem] relative z-10"> 
-            <h2 class="text-4xl font-bold mb-10 text-center text-gray-800">Featured <span class="accent-text">Projects</span></h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="portfolio-card p-6 rounded-md">
-                    <h3 class="text-xl font-semibold mb-3 accent-text">1. Predictive Sales Model</h3>
-                    <p class="text-gray-600 mb-4">
-                        Forecasting quarterly sales performance for a retail chain using time-series analysis to optimize inventory and staffing.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-sm mb-4">
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">Python</span>
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">Scikit-learn</span>
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">ARIMA</span>
-                    </div>
-                    <a href="#" class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-4">[Link to GitHub Code] &rarr;</a>
-                    <a href="#" class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-1">[Link to Report/Demo] &rarr;</a>
-                </div>
-
-                <div class="portfolio-card p-6 rounded-md">
-                    <h3 class="text-xl font-semibold mb-3 accent-text">2. RFM Customer Segmentation</h3>
-                    <p class="text-gray-600 mb-4">
-                        Segmenting an e-commerce customer base using Recency, Frequency, and Monetary (RFM) analysis to target high-value customers.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-sm mb-4">
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">SQL</span>
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">K-Means</span>
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">Power BI</span>
-                    </div>
-                    <a href="#" class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-4">[Link to GitHub Code] &rarr;</a>
-                    <a href="#" class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-1">[Link to Report/Demo] &rarr;</a>
-                </div>
-
-                <div class="portfolio-card p-6 rounded-md">
-                    <h3 class="text-xl font-semibold mb-3 accent-text">3. Operational KPI Dashboard</h3>
-                    <p class="text-gray-600 mb-4">
-                        Designed and implemented a live Tableau dashboard to track marketing spend effectiveness and key operational metrics.
-                    </p>
-                    <div class="flex flex-wrap gap-2 text-sm mb-4">
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">Tableau</span>
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">Excel</span>
-                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium">Data Cleaning</span>
-                    </div>
-                    <a href="#" class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-4">[Link to GitHub Code] &rarr;</a>
-                    <a href="#" class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-1">[Link to Report/Demo] &rarr;</a>
-                </div>
-            </div>
-        </section>
-
-        <hr class="my-12 border-gray-300 container mx-auto px-4">
-
-      <section id="skills" class="py-16 container mx-auto px-4">
-    <h2 class="text-4xl font-bold mb-10 text-center text-gray-800">My <span class="accent-text">Toolbox</span></h2>
-    
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 text-gray-700">
-
-        <div class="flex flex-col h-full"> 
-            
-            <div class="bg-white p-6 shadow-lg border-t-4 border-[--color-accent-dark] flex-grow">
-                <h3 class="text-3xl font-bold accent-text mb-4">Data & Modeling</h3>
-                <ul class="space-y-2 list-disc list-inside">
-                    <li class="pl-2">Statistical Models and forecasting techniques.</li>
-                    <li class="pl-2">Data Processing and cleaning for analysis.</li>
-                    <li class="pl-2">Generating business insights and reports.</li>
-                    <li class="pl-2">Data-driven process optimization.</li>
-                </ul>
-            </div>
-
-            <div class="bg-white p-6 shadow-lg border-t-4 border-[--color-accent-dark] flex-grow mt-10">
-                <h3 class="text-3xl font-bold accent-text mb-4">Technical Tools</h3>
-                <ul class="space-y-2 list-disc list-inside">
-                    <li class="pl-2">Programming: Python and R.</li>
-                    <li class="pl-2">Data Management: SQL and IBM tools.</li>
-                    <li class="pl-2">Visualization & Reporting: Tableau and Power BI.</li>
-                    <li class="pl-2">Full Office package proficiency and AI tools.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="flex flex-col h-full">
-
-            <div class="bg-white p-6 shadow-lg border-t-4 border-[--color-accent-dark] flex-grow">
-                <h3 class="text-3xl font-bold accent-text mb-4">Business & Soft Skills</h3>
-                <ul class="space-y-2 list-disc list-inside">
-                    <li class="pl-2">Requirements Gathering and Problem-solving.</li>
-                    <li class="pl-2">CRM systems and Marketing/Sales analysis.</li>
-                    <li class="pl-2">Cross-cultural communication and adaptability.</li>
-                    <li class="pl-2">Administrative Workflow Streamlining.</li>
-                </ul>
-            </div>
-            
-            <div class="bg-white p-6 shadow-lg border-t-4 border-[--color-accent-dark] flex-grow mt-10">
-                <h3 class="text-3xl font-bold accent-text mb-4">Languages</h3>
-                <ul class="space-y-2 list-disc list-inside">
-                    <li class="pl-2">Spanish (Native proficiency).</li>
-                    <li class="pl-2">English (Bilingual, C2 proficiency).</li>
-                    <li class="pl-2">French (Fluent, C1 proficiency).</li>
-                    <li class="pl-2">Working knowledge of German and Bahasa Indonesia.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-        
-        <hr class="my-12 border-gray-300 container mx-auto px-4">
-
-        <section id="contact" class="py-16 text-center container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-4 text-gray-800">Let's <span class="accent-text">Connect</span></h2>
-            <p class="text-lg text-gray-700 mb-8">
-                Seeking new challenges and opportunities all around the world.
-            </p>
-            
-            <div class="max-w-lg mx-auto text-left space-y-2"> 
-                <p class="text-xl font-semibold">
-                    Email: <a href="mailto:anelrieramoraian@gmail.com" class="accent-text hover:text-[--color-accent-hover]">anelrieramoraian@gmail.com</a>
-                </p>
-                <p class="text-xl font-semibold">
-                    LinkedIn: <a href="https://www.linkedin.com/in/anel-riera-moraian-6669bb259/" target="_blank" class="accent-text hover:text-[--color-accent-hover]">linkedin.com/in/anel-riera-moraian</a>
-                </p>
-                <p class="text-xl font-semibold">
-                    Phone: <a href="tel:+34674719818" class="accent-text hover:text-[--color-accent-hover]">+34 674719818</a>
-                </p>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-gray-200 py-6 mt-16 border-t border-gray-300">
-        <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
-            &copy; 2025 Anel Riera. Built from scratch with HTML & Tailwind CSS.
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const img = document.getElementById('profile-pic');
-            if (img) {
-                // Genera un timestamp único para forzar la recarga de la imagen (cache buster)
-                const uniqueTime = new Date().getTime();
-                // Usa la ruta confirmada (images/unnamed.png) y añade el timestamp como versión
-                img.src = 'images/unnamed.png?v=' + uniqueTime;
+            /* --- COLOR VARIABLES (RED SCHEME) --- */
+            :root {
+                /* Cool, Dark Red/Burgundy for all accents, text, and buttons: #883838 */
+                --color-accent-dark: #883838;
+                /* Very Light, Cool Red/Pink for the main section background: #f5e0e0 */
+                --color-background-light: #f5e0e0;
+                /* Slightly darker shade for hover effects: #6b2d2d */
+                --color-accent-hover: #6b2d2d;
             }
-        });
-    </script>
 
-</body>
+            /* Global Background: Light Red/Pink for the main content & Oswald font */
+            body {
+                font-family:
+                    "Oswald", sans-serif; /* Oswald for all body text */
+                background-color: var(--color-background-light);
+                color: #1f2937; /* Dark text for contrast */
+                scroll-behavior: smooth;
+            }
+
+            /* Apply the high-contrast serif font (Playfair Display) to main titles (h1, h3) and the link */
+            h1,
+            h3,
+            a.main-title {
+                font-family: "Playfair Display", serif;
+            }
+
+            /* Override: Keep h2 for 'Junior Business Analyst' using the body font (Oswald) */
+            h2.body-font-style {
+                font-family: "Oswald", sans-serif !important;
+            }
+
+            /* Style for the accent element (cool, dark red color) */
+            .accent-text {
+                color: var(--color-accent-dark);
+            }
+
+            /* Custom border for section dividers (using the accent color) */
+            .accent-border-top {
+                border-top: 3px solid var(--color-accent-dark);
+            }
+
+            /* Custom card style for professional look in a light theme */
+            .portfolio-card {
+                background-color: #ffffff;
+                border: 1px solid #c8d3db;
+                box-shadow:
+                    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+                    0 2px 4px -2px rgba(0, 0, 0, 0.03);
+                transition:
+                    transform 0.3s,
+                    box-shadow 0.3s;
+            }
+            /* Update hover to use a subtle accent red shadow */
+            .portfolio-card:hover {
+                transform: translateY(-5px);
+                /* Use the cool dark red accent for the shadow (RGB 136, 56, 56) */
+                box-shadow:
+                    0 10px 15px -3px rgba(136, 56, 56, 0.15),
+                    0 4px 6px -2px rgba(136, 56, 56, 0.08);
+            }
+
+            /* Hero section remains pure white */
+            .hero-bg {
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header
+            class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md"
+        >
+            <nav
+                class="container mx-auto px-4 py-4 flex justify-between items-center"
+            >
+                <a
+                    href="#home"
+                    class="text-2xl font-bold accent-text hover:text-gray-700 transition duration-300"
+                    >Anel Riera Moraian test</a
+                >
+                <div
+                    class="hidden md:flex space-x-8 text-lg font-medium text-gray-700"
+                >
+                    <a
+                        href="#projects"
+                        class="hover:accent-text transition duration-200"
+                        >Projects</a
+                    >
+                    <a
+                        href="#skills"
+                        class="hover:accent-text transition duration-200"
+                        >Skills</a
+                    >
+                    <a
+                        href="#contact"
+                        class="hover:accent-text transition duration-200"
+                        >Contact</a
+                    >
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section
+                id="home"
+                class="hero-bg relative overflow-hidden pt-20 md:pt-24 pb-32 md:pb-40"
+            >
+                <div
+                    class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between"
+                >
+                    <div class="md:w-3/5 space-y-6 text-gray-900 z-10">
+                        <h1
+                            class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight"
+                        >
+                            Hi, I'm <span class="accent-text">Anel</span>.
+                        </h1>
+                        <h2
+                            class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 body-font-style"
+                        >
+                            Junior Business Analyst
+                        </h2>
+                        <p class="text-lg text-gray-700 max-w-xl">
+                            I love making sense of things, whether it’s data,
+                            people, or the way a project fits together. I’m
+                            driven by curiosity, and the feeling of bringing
+                            clarity to complex situations. I navigate life in
+                            multiple languages, thrive in international
+                            environments, and naturally adapt to whatever
+                            challenge is in front of me.
+                        </p>
+
+                        <p class="pt-4 text-xl">
+                            <a
+                                href="#biography"
+                                class="accent-text main-title hover:text-[--color-accent-hover] transition duration-200 block"
+                            >
+                                Learn more about me &rarr;
+                            </a>
+                        </p>
+                    </div>
+
+                    <div
+                        class="md:w-2/5 md:ml-auto flex justify-end mt-10 md:mt-0 relative overflow-hidden h-[24rem] z-0"
+                    >
+                        <div
+                            class="w-full max-w-sm md:w-full md:max-w-none h-auto md:h-full relative"
+                        >
+                            <img
+                                id="profile-pic"
+                                src="images/unnamed.png"
+                                alt="Anel Riera Professional Profile Picture"
+                                class="w-full h-full object-cover object-bottom"
+                                onerror="
+                                    this.onerror = null;
+                                    this.src =
+                                        'https://placehold.co/400x500/ffffff/2dd4bf?text=Image+Missing';
+                                    console.error(
+                                        'Image failed to load from images/unnamed.png',
+                                    );
+                                "
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="biography"
+                class="py-16 container mx-auto px-4 accent-border-top"
+            >
+                <div
+                    class="max-w-4xl mx-auto space-y-6 text-gray-700 text-lg leading-relaxed"
+                >
+                    <p>
+                        I’m Anel, and I studied Business Analytics at the
+                        Autonomous University of Madrid because I enjoy
+                        understanding how things work.
+                    </p>
+                    <p>
+                        I’ve worked in the real estate sector, where I supported
+                        operations and analyzed property profitability in
+                        Madrid. It taught me how numbers translate into
+                        real-world decisions, and how much efficiency matters
+                        when people rely on your work.
+                    </p>
+                    <p>
+                        I've also helped organize events for international
+                        students at university and lived in different countries
+                        growing up, which explains why I’m so comfortable
+                        communicating across cultures, and why I can adapt
+                        quickly in fast-changing environments.
+                    </p>
+                    <p>
+                        Outside of my academic and professional life, I spend a
+                        lot of time social dancing and competing. It’s made me
+                        confident under pressure and great at connecting with
+                        new people. I also enjoy creating digital content, which
+                        taught me a lot about audience engagement and
+                        communicating ideas simply.
+                    </p>
+                </div>
+            </section>
+            <hr class="my-12 border-gray-300 container mx-auto px-4" />
+
+            <section
+                id="projects"
+                class="py-16 container mx-auto px-4 mt-[-5rem] relative z-10"
+            >
+                <h2 class="text-4xl font-bold mb-10 text-center text-gray-800">
+                    Featured <span class="accent-text">Projects</span>
+                </h2>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                    <div class="portfolio-card p-6 rounded-md">
+                        <h3 class="text-xl font-semibold mb-3 accent-text">
+                            1. Predictive Sales Model
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Forecasting quarterly sales performance for a retail
+                            chain using time-series analysis to optimize
+                            inventory and staffing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-sm mb-4">
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >Python</span
+                            >
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >Scikit-learn</span
+                            >
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >ARIMA</span
+                            >
+                        </div>
+                        <a
+                            href="#"
+                            class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-4"
+                            >[Link to GitHub Code] &rarr;</a
+                        >
+                        <a
+                            href="#"
+                            class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-1"
+                            >[Link to Report/Demo] &rarr;</a
+                        >
+                    </div>
+
+                    <div class="portfolio-card p-6 rounded-md">
+                        <h3 class="text-xl font-semibold mb-3 accent-text">
+                            2. RFM Customer Segmentation
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Segmenting an e-commerce customer base using
+                            Recency, Frequency, and Monetary (RFM) analysis to
+                            target high-value customers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-sm mb-4">
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >SQL</span
+                            >
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >K-Means</span
+                            >
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >Power BI</span
+                            >
+                        </div>
+                        <a
+                            href="#"
+                            class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-4"
+                            >[Link to GitHub Code] &rarr;</a
+                        >
+                        <a
+                            href="#"
+                            class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-1"
+                            >[Link to Report/Demo] &rarr;</a
+                        >
+                    </div>
+
+                    <div class="portfolio-card p-6 rounded-md">
+                        <h3 class="text-xl font-semibold mb-3 accent-text">
+                            3. Operational KPI Dashboard
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Designed and implemented a live Tableau dashboard to
+                            track marketing spend effectiveness and key
+                            operational metrics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-sm mb-4">
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >Tableau</span
+                            >
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >Excel</span
+                            >
+                            <span
+                                class="bg-red-100 text-red-800 px-3 py-1 rounded-md font-medium"
+                                >Data Cleaning</span
+                            >
+                        </div>
+                        <a
+                            href="#"
+                            class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-4"
+                            >[Link to GitHub Code] &rarr;</a
+                        >
+                        <a
+                            href="#"
+                            class="text-[--color-accent-dark] hover:text-[--color-accent-hover] font-medium transition duration-200 block mt-1"
+                            >[Link to Report/Demo] &rarr;</a
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <hr class="my-12 border-gray-300 container mx-auto px-4" />
+
+            <section id="skills" class="py-16 container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-10 text-center text-gray-800">
+                    My <span class="accent-text">Toolbox</span>
+                </h2>
+
+                <div
+                    class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 text-gray-700"
+                >
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="bg-white p-6 shadow-lg border-t-4 border-[--color-accent-dark] flex-grow"
+                        >
+                            <h3 class="text-3xl font-bold accent-text mb-4">
+                                Data & Modeling
+                            </h3>
+                            <ul class="space-y-2 list-disc list-inside">
+                                <li class="pl-2">
+                                    Statistical Models and forecasting
+                                    techniques.
+                                </li>
+                                <li class="pl-2">
+                                    Data Processing and cleaning for analysis.
+                                </li>
+                                <li class="pl-2">
+                                    Generating business insights and reports.
+                                </li>
+                                <li class="pl-2">
+                                    Data-driven process optimization.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="bg-white p-6 shadow-lg border-t-4 border-[--color-accent-dark] flex-grow mt-10"
+                        >
+                            <h3 class="text-3xl font-bold accent-text mb-4">
+                                Technical Tools
+                            </h3>
+                            <ul class="space-y-2 list-disc list-inside">
+                                <li class="pl-2">Programming: Python and R.</li>
+                                <li class="pl-2">
+                                    Data Management: SQL and IBM tools.
+                                </li>
+                                <li class="pl-2">
+                                    Visualization & Reporting: Tableau and Power
+                                    BI.
+                                </li>
+                                <li class="pl-2">
+                                    Full Office package proficiency and AI
+                                    tools.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col h-full">
+                        <div
+                            class="bg-white p-6 shadow-lg border-t-4 border-[--color-accent-dark] flex-grow"
+                        >
+                            <h3 class="text-3xl font-bold accent-text mb-4">
+                                Business & Soft Skills
+                            </h3>
+                            <ul class="space-y-2 list-disc list-inside">
+                                <li class="pl-2">
+                                    Requirements Gathering and Problem-solving.
+                                </li>
+                                <li class="pl-2">
+                                    CRM systems and Marketing/Sales analysis.
+                                </li>
+                                <li class="pl-2">
+                                    Cross-cultural communication and
+                                    adaptability.
+                                </li>
+                                <li class="pl-2">
+                                    Administrative Workflow Streamlining.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="bg-white p-6 shadow-lg border-t-4 border-[--color-accent-dark] flex-grow mt-10"
+                        >
+                            <h3 class="text-3xl font-bold accent-text mb-4">
+                                Languages
+                            </h3>
+                            <ul class="space-y-2 list-disc list-inside">
+                                <li class="pl-2">
+                                    Spanish (Native proficiency).
+                                </li>
+                                <li class="pl-2">
+                                    English (Bilingual, C2 proficiency).
+                                </li>
+                                <li class="pl-2">
+                                    French (Fluent, C1 proficiency).
+                                </li>
+                                <li class="pl-2">
+                                    Working knowledge of German and Bahasa
+                                    Indonesia.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="my-12 border-gray-300 container mx-auto px-4" />
+
+            <section
+                id="contact"
+                class="py-16 text-center container mx-auto px-4"
+            >
+                <h2 class="text-4xl font-bold mb-4 text-gray-800">
+                    Let's <span class="accent-text">Connect</span>
+                </h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Seeking new challenges and opportunities all around the
+                    world.
+                </p>
+
+                <div class="max-w-lg mx-auto text-left space-y-2">
+                    <p class="text-xl font-semibold">
+                        Email:
+                        <a
+                            href="mailto:anelrieramoraian@gmail.com"
+                            class="accent-text hover:text-[--color-accent-hover]"
+                            >anelrieramoraian@gmail.com</a
+                        >
+                    </p>
+                    <p class="text-xl font-semibold">
+                        LinkedIn:
+                        <a
+                            href="https://www.linkedin.com/in/anel-riera-moraian-6669bb259/"
+                            target="_blank"
+                            class="accent-text hover:text-[--color-accent-hover]"
+                            >linkedin.com/in/anel-riera-moraian</a
+                        >
+                    </p>
+                    <p class="text-xl font-semibold">
+                        Phone:
+                        <a
+                            href="tel:+34674719818"
+                            class="accent-text hover:text-[--color-accent-hover]"
+                            >+34 674719818</a
+                        >
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-200 py-6 mt-16 border-t border-gray-300">
+            <div
+                class="container mx-auto px-4 text-center text-gray-600 text-sm"
+            >
+                &copy; 2025 Anel Riera. Built from scratch with HTML & Tailwind
+                CSS.
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const img = document.getElementById("profile-pic");
+                if (img) {
+                    // Genera un timestamp único para forzar la recarga de la imagen (cache buster)
+                    const uniqueTime = new Date().getTime();
+                    // Usa la ruta confirmada (images/unnamed.png) y añade el timestamp como versión
+                    img.src = "images/unnamed.png?v=" + uniqueTime;
+                }
+            });
+        </script>
+    </body>
 </html>
