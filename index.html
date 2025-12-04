@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +28,8 @@
             scroll-behavior: smooth;
         }
 
-        /* Apply the high-contrast serif font (Playfair Display) to main titles (h1, h2, h3) */
-        h1, h3, h2.main-title { 
+        /* Apply the high-contrast serif font (Playfair Display) to main titles (h1, h3) and the link */
+        h1, h3, a.main-title { 
             font-family: 'Playfair Display', serif; 
         }
         
@@ -42,6 +43,11 @@
             color: var(--color-accent-dark); 
         }
         
+        /* Custom border for section dividers (using the accent color) */
+        .accent-border-top {
+            border-top: 3px solid var(--color-accent-dark);
+        }
+
         /* Custom card style for professional look in a light theme */
         .portfolio-card {
             background-color: #ffffff;
@@ -79,39 +85,57 @@
     <main>
 
         <section id="home" class="hero-bg relative overflow-hidden pt-20 md:pt-24 pb-32 md:pb-40">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between">
-        
-        <div class="md:w-3/5 space-y-6 text-gray-900 z-10">
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
-                Hi, I'm <span class="accent-text">Anel</span>.
-            </h1>
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 body-font-style">
-                Junior Business Analyst
-            </h2>
-            <p class="text-lg text-gray-700 max-w-xl">
-                I love making sense of things, whether it’s data, people, or the way a project fits together. I’m driven by curiosity, and the feeling of bringing clarity to complex situations. I navigate life in multiple languages, thrive in international environments, and naturally adapt to whatever challenge is in front of me.
-            </p>
-            
-            <p class="pt-4 text-xl">
-                <a href="#biography" class="accent-text main-title hover:text-[--color-accent-hover] transition duration-200 block">
-                    Learn more about me &rarr;
-                </a>
-            </p>
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between">
+                
+                <div class="md:w-3/5 space-y-6 text-gray-900 z-10">
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
+                        Hi, I'm <span class="accent-text">Anel</span>.
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 body-font-style">
+                        Junior Business Analyst
+                    </h2>
+                    <p class="text-lg text-gray-700 max-w-xl">
+                        I love making sense of things, whether it’s data, people, or the way a project fits together. I’m driven by curiosity, and the feeling of bringing clarity to complex situations. I navigate life in multiple languages, thrive in international environments, and naturally adapt to whatever challenge is in front of me.
+                    </p>
+                    
+                    <p class="pt-4 text-xl">
+                        <a href="#biography" class="accent-text main-title hover:text-[--color-accent-hover] transition duration-200 block">
+                            Learn more about me &rarr;
+                        </a>
+                    </p>
+                    </div>
+                
+                <div class="md:w-2/5 md:ml-auto flex justify-end mt-10 md:mt-0 relative overflow-hidden h-[24rem] z-0">
+                    <div class="w-full max-w-sm md:w-full md:max-w-none h-auto md:h-full relative">
+                        <img 
+                            id="profile-pic"
+                            src="images/unnamed.png" 
+                            alt="Anel Riera Professional Profile Picture" 
+                            class="w-full h-full object-cover object-bottom" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/400x500/ffffff/2dd4bf?text=Image+Missing'; console.error('Image failed to load from images/unnamed.png');"
+                        />
+                    </div>
+                </div>
             </div>
-        
-        <div class="md:w-2/5 md:ml-auto flex justify-end mt-10 md:mt-0 relative overflow-hidden h-[24rem] z-0">
-            <div class="w-full max-w-sm md:w-full md:max-w-none h-auto md:h-full relative">
-                <img 
-                    id="profile-pic"
-                    src="images/unnamed.png" 
-                    alt="Anel Riera Professional Profile Picture" 
-                    class="w-full h-full object-cover object-bottom" 
-                    onerror="this.onerror=null; this.src='https://placehold.co/400x500/ffffff/2dd4bf?text=Image+Missing'; console.error('Image failed to load from images/unnamed.png');"
-                />
+        </section>
+
+        <section id="biography" class="py-16 container mx-auto px-4 accent-border-top">
+            <div class="max-w-4xl mx-auto space-y-6 text-gray-700 text-lg leading-relaxed">
+                <p>
+                    I’m Anel, and I studied Business Analytics at the Autonomous University of Madrid because I enjoy understanding how things work.
+                </p>
+                <p>
+                    I’ve worked in the real estate sector, where I supported operations and analyzed property profitability in Madrid. It taught me how numbers translate into real-world decisions, and how much efficiency matters when people rely on your work. 
+                </p>
+                <p>
+                    I've also helped organize events for international students at university and lived in different countries growing up, which explains why I’m so comfortable communicating across cultures, and why I can adapt quickly in fast-changing environments.
+                </p>
+                <p>
+                    Outside of my academic and professional life, I spend a lot of time social dancing and competing. It’s made me confident under pressure and great at connecting with new people. I also enjoy creating digital content, which taught me a lot about audience engagement and communicating ideas simply.
+                </p>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+        <hr class="my-12 border-gray-300 container mx-auto px-4">
 
         <section id="projects" class="py-16 container mx-auto px-4 mt-[-5rem] relative z-10"> 
             <h2 class="text-4xl font-bold mb-10 text-center text-gray-800">Featured <span class="accent-text">Projects</span></h2>
