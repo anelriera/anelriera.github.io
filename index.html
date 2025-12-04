@@ -62,13 +62,13 @@
         <section id="home" class="hero-bg relative overflow-hidden pt-20 md:pt-24 pb-32 md:pb-40">
             <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between">
                 
-                <!-- Text Content (Left Side - Larger Typography) -->
+                <!-- Text Content (Left Side - Larger Typography - TEXT REVERTED) -->
                 <div class="md:w-3/5 space-y-6 text-gray-900 z-10">
                     <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight">
-                        Anel Riera
+                        Hi, I'm <span class="accent-text">Anel Riera</span>.
                     </h1>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800">
-                        Business & Data Analytics
+                        Business & Data Analytics Student
                     </h2>
                     <p class="text-lg text-gray-700 max-w-xl">
                         I translate complex data into actionable business strategies. My portfolio showcases projects in market analysis, predictive modeling, and data visualization using Python, SQL, and Tableau, driving measurable impact.
@@ -80,16 +80,17 @@
                     </div>
                 </div>
                 
-                <!-- Profile Image Element (Right Side - Floating and Cropped) -->
-                <div class="md:w-2/5 absolute right-0 top-0 bottom-0 md:relative md:mt-[-5rem] md:ml-auto flex justify-end overflow-hidden h-full z-0">
+                <!-- Profile Image Element (Right Side - Fixed Height and Cropped) -->
+                <div class="md:w-2/5 md:ml-auto flex justify-end mt-10 md:mt-0 relative overflow-hidden h-[24rem] z-0">
                     <!-- Image container for cropping effect (No border/shadow on image container) -->
                     <div class="w-full max-w-sm md:w-full md:max-w-none h-auto md:h-full relative">
-                        <!-- Image tag - no border, large size, object-cover to crop -->
+                        <!-- ID added for JavaScript to use the cache buster -->
                         <img 
-                            src="./images/unnamed.png?t=1" 
+                            id="profile-pic"
+                            src="images/unnamed.png" 
                             alt="Anel Riera Professional Profile Picture" 
-                            class="w-full h-auto object-cover absolute bottom-0 right-0 max-h-full md:max-h-none" 
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x500/ffffff/2dd4bf?text=Image+Placeholder';"
+                            class="w-full h-full object-cover object-bottom" 
+                            onerror="this.onerror=null; this.src='https://placehold.co/400x500/ffffff/2dd4bf?text=Image+Missing'; console.error('Image failed to load from images/unnamed.png');"
                         />
                     </div>
                 </div>
@@ -212,11 +213,16 @@
         </div>
     </footer>
 
-    <!-- Basic JavaScript (for future interaction, currently empty) -->
+    <!-- Basic JavaScript (Cache Buster) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Future JavaScript logic for things like mobile menus or animations goes here.
-            console.log("Portfolio loaded successfully.");
+            const img = document.getElementById('profile-pic');
+            if (img) {
+                // Genera un timestamp único para forzar la recarga de la imagen (cache buster)
+                const uniqueTime = new Date().getTime();
+                // Usa la ruta confirmada (images/unnamed.png) y añade el timestamp como versión
+                img.src = 'images/unnamed.png?v=' + uniqueTime;
+            }
         });
     </script>
 
